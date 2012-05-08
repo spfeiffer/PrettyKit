@@ -49,11 +49,6 @@
 @implementation PrettyGridSubview
 @synthesize cell, selectedSegment;
 
-- (void) dealloc 
-{
-    self.cell = nil;
-}
-
 - (CGFloat) segmentWidth 
 {
     float width = self.frame.size.width - 4/self.cell.numberOfElements;

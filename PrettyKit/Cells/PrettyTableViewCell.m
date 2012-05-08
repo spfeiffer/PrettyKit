@@ -324,14 +324,6 @@ typedef enum {
 - (void) dealloc
 {
     [self.contentView removeObserver:self forKeyPath:@"frame"];
-    self.borderColor = nil;
-    self.tableViewBackgroundColor = nil;
-    self.customSeparatorColor = nil;
-    self.selectionGradientStartColor = nil;
-    self.selectionGradientEndColor = nil;
-    self.customBackgroundColor = nil;
-    self.gradientStartColor = nil;
-    self.gradientEndColor = nil;
 }
 
 - (void)initializeVars

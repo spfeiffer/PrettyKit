@@ -35,12 +35,6 @@
 
 #define shadow_margin 4 
 
-- (void) dealloc 
-{
-    self.customView = nil;
-    
-}
-
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
