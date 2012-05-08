@@ -41,8 +41,6 @@
     self.gradientEndColor = nil;
     self.topLineColor = nil;
     self.bottomLineColor = nil;
-    
-    [super dealloc];
 }
 
 - (void) initializeVars 

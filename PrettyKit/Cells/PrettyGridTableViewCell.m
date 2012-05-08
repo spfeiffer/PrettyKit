@@ -52,8 +52,6 @@
 - (void) dealloc 
 {
     self.cell = nil;
-    
-    [super dealloc];
 }
 
 - (CGFloat) segmentWidth 
@@ -310,7 +308,6 @@
                          } 
                          completion:^(BOOL finished) {
                              [imageView removeFromSuperview];
-                             [imageView release]; 
                              if (block) {
                                  block();
                              }
@@ -386,30 +383,18 @@
 - (void) dealloc 
 {
     if (_texts != nil) {
-        [_texts release];
         _texts = nil;
     }
     if (_detailTexts != nil) {
-        [_detailTexts release];
         _detailTexts = nil;
     }
     if (_indexPath != nil) {
-        [_indexPath release];
         _indexPath = nil;
     }
-    
-    
-    [super dealloc];
 }
 
 - (void) initVars 
 {
-    if (_texts != nil) {
-        [_texts release];
-    }
-    if (_detailTexts != nil) {
-        [_detailTexts release];
-    }
     _texts = [[NSMutableDictionary alloc] init];
     _detailTexts = [[NSMutableDictionary alloc] init];
     
@@ -440,7 +425,6 @@
         PrettyGridSubview *subview = [[PrettyGridSubview alloc] init];
         subview.cell = self;
         self.customView = subview;
-        [subview release];
         
         self.elementSelectionStyle = UITableViewCellSelectionStyleBlue;
         self.textAlignment = UITextAlignmentCenter;
@@ -517,10 +501,7 @@
 {
     [super prepareForTableView:tableView indexPath:indexPath];
     
-    if (_indexPath != nil) {
-        [_indexPath release];
-    }
-    _indexPath = [indexPath retain];
+    _indexPath = indexPath;
 }
 
 - (void) selectIndex:(int)index 
